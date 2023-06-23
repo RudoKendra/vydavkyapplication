@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Uprav výdavok</title>
+</head>
+<body>
+  <h1>Uprav výdavok</h1>
+  <form action="#" method="GET" th:action="@{/uloz-upraveny-vydavok}" th:object="${vytiahnutyVydavokThymeleaf}">
+    <input th:field="*{id}" type="hidden">
+    Popis <input id="popis" placeholder="Vypíš popis" class="form-control" th:field="*{popis}" type="text"><br>
+    Cena <input id="cena" placeholder="Vypíš cenu" class="form-control" step="0.1" th:field="*{cena}" type="number"><br>
+    Katégoria <input id="kategoria" placeholder="Vypíš kategóriu" class="form-control" th:field="*{kategoria}" type="text"><br>
+    Dátum<input id="datum" placeholder="Vypíš dátum" class="form-control" th:field="*{datum}" type="date"><br>
+    <button type="submit" class="btn btn-primary">Ulož výdavok</button>
+  </form>
+</body>
+</html>

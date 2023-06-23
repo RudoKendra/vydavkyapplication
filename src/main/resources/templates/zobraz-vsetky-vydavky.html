@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Všetky výdavky</title>
+</head>
+<body>
+    <h1>Všetky výdavky</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Popis</th>
+        <th>Cena</th>
+        <th>Kategoria</th>
+        <th>Datum</th>
+        <th>Uprav</th>
+        <th>Vymaž</th>
+      </tr>
+        <tr th:each="vydavokObjekt:${zoznamVydavkyThymeleaf}">
+            <td th:text="${vydavokObjekt.id}"></td>
+            <td th:text="${vydavokObjekt.popis}"></td>
+            <td th:text="${vydavokObjekt.cena}"></td>
+            <td th:text="${vydavokObjekt.kategoria}"></td>
+            <td th:text="${vydavokObjekt.datum}"></td>
+            <td>
+                <a th:href="@{/uprav-vydavok/{id}(id=${vydavokObjekt.id})}">Uprav výdavok</a>
+            </td>
+            <td>
+                <a th:href="@{/vymaz-vydavok/{id}(id=${vydavokObjekt.id})}">Vymaž výdavok</a>
+            </td>
+        </tr>
+    </table>
+<br>
+<a href="/">Späť na hlavnu stránku</a>
+</body>
+</html>

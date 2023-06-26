@@ -6,6 +6,7 @@ import sk.rudokendra.vydavkyapplication.model.Vydavok;
 import sk.rudokendra.vydavkyapplication.repository.VydavokRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VydavokService implements IVydavokService {
@@ -36,5 +37,17 @@ public class VydavokService implements IVydavokService {
     public void ostranVydavok(long id) {
         vydavokRepository.deleteById(id);
     }
+
+//    @Override
+//    public Vydavok hladajVydavokPodlaID(long id) {
+//        Optional<Vydavok> optional = vydavokRepository.findById(id);
+//        Vydavok vydavok = null;
+//        if (optional.isPresent()) {
+//            vydavok = optional.get();
+//        } else {
+//            throw new RuntimeException("Vydavok neexistuje: " + id);
+//        }
+//        return vydavok;
+//    }
 
 }

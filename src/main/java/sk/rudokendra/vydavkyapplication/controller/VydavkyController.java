@@ -58,4 +58,9 @@ public class VydavkyController {
         vydavokService.ostranVydavok(id);
         return "redirect:/";
     }
+    @GetMapping("/o-mne")
+    public String oMne (){
+        return "o-mne";
+    }
+
 }

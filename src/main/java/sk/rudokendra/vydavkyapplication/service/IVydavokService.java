@@ -10,4 +10,5 @@ public interface IVydavokService {
     List<Vydavok> zobrazVsetkyVydavky();
     Vydavok ziskajVydavokPodlaId (long id);
     void ostranVydavok (long id);
+//    Vydavok hladajVydavokPodlaID (long id);
 }
